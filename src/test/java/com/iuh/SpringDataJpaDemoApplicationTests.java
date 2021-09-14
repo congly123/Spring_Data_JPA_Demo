@@ -19,31 +19,13 @@ class SpringDataJpaDemoApplicationTests {
 	}
 
 	@Test
-	void findAll() {
-		List<Student> students = studentRepository.findAll();
+	void getStudents() {
+		List<Student> students = studentRepository.getStudentByAge();
 		System.out.println(students);
 	}
 
 	@Test
-	void createStudent() {
-		Student student = new Student();
-		student.setName("Nguyen Long Nhut");
-		student.setAge(21);
-		studentRepository.save(student);
-	}
-
-	@Test
-	void updateStudent() {
-		Student student = new Student();
-		student.setId(4);
-		student.setName("Nguyen Long Phan Quan");
-		student.setAge(21);
-		studentRepository.save(student);
-	}
-
-	@Test
 	void deleteStudent() {
-		// Delete student có id = 4
-		studentRepository.deleteById(4);
+		studentRepository.deleteStudentbyId(3);
 	}
 }
