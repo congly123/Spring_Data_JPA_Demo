@@ -12,12 +12,12 @@ import java.util.List;
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Integer> {
     // Tìm student có tuổi >= 20
-    @Query(value = "SELECT * FROM Student WHERE age >= 20", nativeQuery = true)
+    @Query(value = "SELECT s FROM Student s WHERE s.age >= 20")
     List<Student> getStudentByAge();
 
     // Delete student có id = ?
     @Transactional
     @Modifying
-    @Query(value = "DELETE FROM Student WHERE id = ?1", nativeQuery = true)
+    @Query(value = "DELETE FROM Student WHERE id = ?1")
     void deleteStudentbyId(int id);
 }

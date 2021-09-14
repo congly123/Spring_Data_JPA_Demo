@@ -26,6 +26,6 @@ class SpringDataJpaDemoApplicationTests {
 
 	@Test
 	void deleteStudent() {
-		studentRepository.deleteStudentbyId(3);
+		studentRepository.deleteStudentbyId(2);
 	}
 }
